@@ -13,11 +13,12 @@
       </div>
 
       <div class="col-auto">
-        <span *ngIf="isValid('nombre')"
+        <span
               error-msg
               [color]="color"
               [mensaje]="mensaje1"
-              ></span>
+              [valido]="!isValid('nombre')">
+        </span>
       </div>
 
       <div class="row mt-3">
@@ -32,4 +33,12 @@
 <h3 class="mt-5" error-msg color="#6857E6" mensaje="Formulario"></h3>
 <pre> {{miFormulario.value | json }} </pre>
 <pre> {{miFormulario.valid }} </pre>
+
+<div class="row mt-5" *customIf="miFormulario.valid">
+  <div class="col">
+      <div class="alert alert-primary">
+          Todo OK
+      </div>
+  </div>
+</div>
 

@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
-.contenedor {
-  color: #15d315;
+.hidden {
+  display: none;
 }

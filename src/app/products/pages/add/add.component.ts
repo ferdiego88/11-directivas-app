@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddComponent {
 
   mensaje1:string = 'Fernando Herrera';
-  color = 'red';
+  color = 'green';
   miFormulario: FormGroup = this.fb.group({
     nombre: ['', Validators.required]
   });
@@ -26,11 +26,12 @@ export class AddComponent {
   }
 
   cambiarNombre() {
-    this.mensaje1 = 'Diego Santillan';
+    this.mensaje1 = Math.random().toString();
   }
 
   cambiarColor(){
-    this.color = 'green';
+    const color = '#xxxxxx'.replace(/x/g, y=>(Math.random()*16|0).toString(16));
+    this.color = color;
   }
 
 }
